@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { PgoalsService } from './pgoals.service';
 import { CreatePgoalDto } from './dto/create-pgoal.dto';
 import { UpdatePgoalDto } from './dto/update-pgoal.dto';
@@ -19,16 +27,16 @@ export class PgoalsController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.pgoalsService.findOne(+id);
+    return this.pgoalsService.findOne(id);
   }
 
   @Patch(':id')
   update(@Param('id') id: string, @Body() updatePgoalDto: UpdatePgoalDto) {
-    return this.pgoalsService.update(+id, updatePgoalDto);
+    return this.pgoalsService.update(id, updatePgoalDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.pgoalsService.remove(+id);
+    return this.pgoalsService.remove(id);
   }
 }

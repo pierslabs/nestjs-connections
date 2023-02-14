@@ -28,13 +28,13 @@ let PgoalsController = class PgoalsController {
         return this.pgoalsService.findAll();
     }
     findOne(id) {
-        return this.pgoalsService.findOne(+id);
+        return this.pgoalsService.findOne(id);
     }
     update(id, updatePgoalDto) {
-        return this.pgoalsService.update(+id, updatePgoalDto);
+        return this.pgoalsService.update(id, updatePgoalDto);
     }
     remove(id) {
-        return this.pgoalsService.remove(+id);
+        return this.pgoalsService.remove(id);
     }
 };
 __decorate([
