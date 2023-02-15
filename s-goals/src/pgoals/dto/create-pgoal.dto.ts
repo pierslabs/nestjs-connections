@@ -10,5 +10,5 @@ export class CreatePgoalDto {
 
   @IsOptional()
   @IsArray()
-  priority?: IPriority[];
+  priority?: string[];
 }

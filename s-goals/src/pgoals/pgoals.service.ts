@@ -21,13 +21,16 @@ export class PgoalsService {
       const goal = this.pgoalRepo.create(createPgoalDto);
       return await this.pgoalRepo.save(goal);
     } catch (error) {
-      throw new InternalServerErrorException(error.message);
+      console.log('entra');
+      throw new InternalServerErrorException(error);
     }
   }
 
-  async findAll() {
+  async findAll(): Promise<Pgoal[]> {
     try {
-      return await this.pgoalRepo.find();
+      const goals = await this.pgoalRepo.find();
+
+      return goals;
     } catch (error) {
       throw new InternalServerErrorException(error.message);
     }

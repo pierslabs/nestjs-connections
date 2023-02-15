@@ -10,6 +10,7 @@ import {
 import { PgoalsService } from './pgoals.service';
 import { CreatePgoalDto } from './dto/create-pgoal.dto';
 import { UpdatePgoalDto } from './dto/update-pgoal.dto';
+import { Pgoal } from './entities/pgoal.entity';
 
 @Controller('pgoals')
 export class PgoalsController {
@@ -21,7 +22,7 @@ export class PgoalsController {
   }
 
   @Get()
-  findAll() {
+  findAll(): Promise<Pgoal[]> {
     return this.pgoalsService.findAll();
   }
 

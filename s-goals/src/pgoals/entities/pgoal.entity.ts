@@ -12,5 +12,5 @@ export class Pgoal {
   frequency: boolean;
 
   @Column({ type: 'text', array: true, default: ['low'] })
-  priority: IPriority[];
+  priority: string[];
 }
